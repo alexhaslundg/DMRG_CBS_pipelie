@@ -1,0 +1,15 @@
+# Core scientific stack
+numpy
+scipy
+psutil
+
+# Quantum chemistry
+pyscf
+
+# DMRG backend - install from source: https://github.com/block-hczhai/block2-preview
+pyblock2
+
+# Optional: analysis and plotting (needed for cbs_extrapolate.py)
+pandas
+matplotlib
+seaborn

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "dmrg_pipeline"
+version = "0.1.0"
+description = "Automated DMRG workflows: orbital prep, active space selection, CBS extrapolation"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "psutil",
+    "pyscf",
+    "pyblock2",
+]
+
+[project.optional-dependencies]
+analysis = [
+    "pandas",
+    "matplotlib",
+    "seaborn",
+]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+[project.scripts]
+dmrg-run = "scripts.run_calculations:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dmrg_pipeline*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
